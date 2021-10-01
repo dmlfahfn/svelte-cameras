@@ -6,7 +6,7 @@ import User from "./User.svelte";
     export let users = [];
 
     onMount(() => {
-        fetch("http://localhost:3000/sites")
+        fetch("http://localhost:3000/users")
         .then(res => res.json())
         .then(data => {
             console.log(data)
