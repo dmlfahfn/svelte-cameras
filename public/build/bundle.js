@@ -415,9 +415,9 @@ var app = (function () {
     			li = element("li");
     			t = text(t_value);
     			attr_dev(li, "class", "svelte-56n8hm");
-    			add_location(li, file$2, 11, 4, 162);
+    			add_location(li, file$2, 12, 4, 158);
     			attr_dev(main, "class", "svelte-56n8hm");
-    			add_location(main, file$2, 10, 0, 151);
+    			add_location(main, file$2, 11, 0, 147);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -462,7 +462,7 @@ var app = (function () {
 
     	const onClick = e => {
     		e.preventDefault();
-    		console.log("click", e.target);
+    		console.log(e.target);
     	};
 
     	const writable_props = ['user'];
@@ -789,9 +789,9 @@ var app = (function () {
     	let main;
     	let h1;
     	let t1;
-    	let sites;
+    	let users;
     	let current;
-    	sites = new Users({ $$inline: true });
+    	users = new Users({ $$inline: true });
 
     	const block = {
     		c: function create() {
@@ -799,11 +799,11 @@ var app = (function () {
     			h1 = element("h1");
     			h1.textContent = "Hello all users!";
     			t1 = space();
-    			create_component(sites.$$.fragment);
+    			create_component(users.$$.fragment);
     			attr_dev(h1, "class", "svelte-1tky8bj");
-    			add_location(h1, file, 5, 1, 64);
+    			add_location(h1, file, 5, 1, 65);
     			attr_dev(main, "class", "svelte-1tky8bj");
-    			add_location(main, file, 4, 0, 56);
+    			add_location(main, file, 4, 0, 57);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -812,22 +812,22 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
     			append_dev(main, t1);
-    			mount_component(sites, main, null);
+    			mount_component(users, main, null);
     			current = true;
     		},
     		p: noop,
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(sites.$$.fragment, local);
+    			transition_in(users.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(sites.$$.fragment, local);
+    			transition_out(users.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-    			destroy_component(sites);
+    			destroy_component(users);
     		}
     	};
 
@@ -851,7 +851,7 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ Sites: Users });
+    	$$self.$capture_state = () => ({ Users });
     	return [];
     }
 

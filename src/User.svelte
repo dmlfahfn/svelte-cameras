@@ -1,11 +1,12 @@
 <script>
+
     export let user = {};
 
     const onClick = (e) => {
         e.preventDefault();
-        console.log("click", e.target);
+        console.log(e.target);
     }
-
+    
 </script>
 
 <main>

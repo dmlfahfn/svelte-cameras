@@ -1,10 +1,10 @@
 <script>
-	import Sites from "./Users.svelte"
+	import Users from "./Users.svelte";
 </script>
 
 <main>
 	<h1>Hello all users!</h1>
-	<Sites />
+	<Users />
 </main>
 
 <style>
