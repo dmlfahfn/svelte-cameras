@@ -2,6 +2,8 @@
     1. username: demouser1, password: test1
     2. username: demouser2, password: test2
 
+*Install json-server 
+
 *Run 'npm run dev' in order to run the project
 
 *Psst — looking for a more complete solution? Check out [SvelteKit](https://kit.svelte.dev), the official framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.*
