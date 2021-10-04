@@ -450,15 +450,15 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (23:4) {:else}
-    function create_else_block$1(ctx) {
+    // (22:4) {:else}
+    function create_else_block(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Hämtar Sites";
-    			add_location(div, file$2, 23, 8, 448);
+    			add_location(div, file$2, 22, 8, 460);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -470,16 +470,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$1.name,
+    		id: create_else_block.name,
     		type: "else",
-    		source: "(23:4) {:else}",
+    		source: "(22:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (21:4) {#each sites as site}
+    // (20:4) {#each sites as site}
     function create_each_block(ctx) {
     	let div;
     	let t_value = /*site*/ ctx[2].title + "";
@@ -489,7 +489,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			add_location(div, file$2, 21, 8, 404);
+    			add_location(div, file$2, 20, 8, 416);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -507,7 +507,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(21:4) {#each sites as site}",
+    		source: "(20:4) {#each sites as site}",
     		ctx
     	});
 
@@ -527,7 +527,7 @@ var app = (function () {
     	let each_1_else = null;
 
     	if (!each_value.length) {
-    		each_1_else = create_else_block$1(ctx);
+    		each_1_else = create_else_block(ctx);
     	}
 
     	const block = {
@@ -542,8 +542,8 @@ var app = (function () {
     				each_1_else.c();
     			}
 
-    			attr_dev(main, "class", "svelte-1byxh0m");
-    			add_location(main, file$2, 18, 0, 358);
+    			attr_dev(main, "class", "svelte-ksesm4");
+    			add_location(main, file$2, 17, 0, 370);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -589,7 +589,7 @@ var app = (function () {
     						each_1_else = null;
     					}
     				} else if (!each_1_else) {
-    					each_1_else = create_else_block$1(ctx);
+    					each_1_else = create_else_block(ctx);
     					each_1_else.c();
     					each_1_else.m(main, null);
     				}
@@ -688,8 +688,8 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src/Form.svelte";
 
-    // (28:4) {#if !user}
-    function create_if_block_1(ctx) {
+    // (26:4) {#if !user}
+    function create_if_block_2(ctx) {
     	let form;
     	let input0;
     	let t0;
@@ -710,12 +710,12 @@ var app = (function () {
     			button.textContent = "Log In";
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "id", "username");
-    			add_location(input0, file$1, 30, 8, 644);
+    			add_location(input0, file$1, 27, 8, 598);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "id", "password");
-    			add_location(input1, file$1, 31, 8, 710);
-    			add_location(button, file$1, 32, 8, 780);
-    			add_location(form, file$1, 28, 4, 600);
+    			add_location(input1, file$1, 28, 8, 664);
+    			add_location(button, file$1, 29, 8, 734);
+    			add_location(form, file$1, 26, 4, 562);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, form, anchor);
@@ -755,24 +755,24 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1.name,
+    		id: create_if_block_2.name,
     		type: "if",
-    		source: "(28:4) {#if !user}",
+    		source: "(26:4) {#if !user}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:4) {:else}
-    function create_else_block(ctx) {
+    // (36:33) 
+    function create_if_block_1(ctx) {
     	let p;
 
     	const block = {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Are you sure you have the right username or password?";
-    			add_location(p, file$1, 42, 8, 895);
+    			add_location(p, file$1, 36, 8, 868);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -787,16 +787,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block.name,
-    		type: "else",
-    		source: "(42:4) {:else}",
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(36:33) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (40:4) {#if user }
+    // (34:4) {#if user }
     function create_if_block(ctx) {
     	let sites;
     	let current;
@@ -842,7 +842,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(40:4) {#if user }",
+    		source: "(34:4) {#if user }",
     		ctx
     	});
 
@@ -855,26 +855,28 @@ var app = (function () {
     	let current_block_type_index;
     	let if_block1;
     	let current;
-    	let if_block0 = !/*user*/ ctx[2] && create_if_block_1(ctx);
-    	const if_block_creators = [create_if_block, create_else_block];
+    	let if_block0 = !/*user*/ ctx[2] && create_if_block_2(ctx);
+    	const if_block_creators = [create_if_block, create_if_block_1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
     		if (/*user*/ ctx[2]) return 0;
-    		return 1;
+    		if (/*user*/ ctx[2] === undefined) return 1;
+    		return -1;
     	}
 
-    	current_block_type_index = select_block_type(ctx);
-    	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	if (~(current_block_type_index = select_block_type(ctx))) {
+    		if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	}
 
     	const block = {
     		c: function create() {
     			main = element("main");
     			if (if_block0) if_block0.c();
     			t = space();
-    			if_block1.c();
-    			attr_dev(main, "class", "svelte-18f7cur");
-    			add_location(main, file$1, 26, 0, 573);
+    			if (if_block1) if_block1.c();
+    			attr_dev(main, "class", "svelte-rop7fs");
+    			add_location(main, file$1, 24, 0, 535);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -883,7 +885,11 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			if (if_block0) if_block0.m(main, null);
     			append_dev(main, t);
-    			if_blocks[current_block_type_index].m(main, null);
+
+    			if (~current_block_type_index) {
+    				if_blocks[current_block_type_index].m(main, null);
+    			}
+
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -891,7 +897,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_1(ctx);
+    					if_block0 = create_if_block_2(ctx);
     					if_block0.c();
     					if_block0.m(main, t);
     				}
@@ -904,26 +910,35 @@ var app = (function () {
     			current_block_type_index = select_block_type(ctx);
 
     			if (current_block_type_index === previous_block_index) {
-    				if_blocks[current_block_type_index].p(ctx, dirty);
+    				if (~current_block_type_index) {
+    					if_blocks[current_block_type_index].p(ctx, dirty);
+    				}
     			} else {
-    				group_outros();
+    				if (if_block1) {
+    					group_outros();
 
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
+    					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    						if_blocks[previous_block_index] = null;
+    					});
 
-    				check_outros();
-    				if_block1 = if_blocks[current_block_type_index];
-
-    				if (!if_block1) {
-    					if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    					if_block1.c();
-    				} else {
-    					if_block1.p(ctx, dirty);
+    					check_outros();
     				}
 
-    				transition_in(if_block1, 1);
-    				if_block1.m(main, null);
+    				if (~current_block_type_index) {
+    					if_block1 = if_blocks[current_block_type_index];
+
+    					if (!if_block1) {
+    						if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    						if_block1.c();
+    					} else {
+    						if_block1.p(ctx, dirty);
+    					}
+
+    					transition_in(if_block1, 1);
+    					if_block1.m(main, null);
+    				} else {
+    					if_block1 = null;
+    				}
     			}
     		},
     		i: function intro(local) {
@@ -938,7 +953,10 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
     			if (if_block0) if_block0.d();
-    			if_blocks[current_block_type_index].d();
+
+    			if (~current_block_type_index) {
+    				if_blocks[current_block_type_index].d();
+    			}
     		}
     	};
 
@@ -959,9 +977,8 @@ var app = (function () {
     	let username = "";
     	let password = "";
     	let users = [];
-    	let user;
+    	let user = null;
 
-    	// $: console.log("username", username)
     	onMount(() => {
     		fetch("http://localhost:3000/users").then(res => res.json()).then(data => {
     			console.log(data);
@@ -1043,7 +1060,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			h1.textContent = "Please log in!";
+    			h1.textContent = "Welcome to the device portal!";
     			t1 = space();
     			create_component(form.$$.fragment);
     			attr_dev(h1, "class", "svelte-1tky8bj");

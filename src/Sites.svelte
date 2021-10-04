@@ -1,8 +1,7 @@
 <script>
-import {onMount} from "svelte";
-export let user;
-let sites = [];
-
+    import {onMount} from "svelte";
+    export let user;
+    let sites = [];
 
     onMount(() => {
         console.log(user.username);
@@ -12,7 +11,7 @@ let sites = [];
             console.log(data)
             sites = data.filter(s => s.owner == user.username)
         });
-    })
+    });
 
 </script>
 
@@ -27,11 +26,11 @@ let sites = [];
 
 <style>
 main {
-		text-align: center;
-		padding: 10px;
-		max-width: 448px;
-		margin: 10px;
-        border: 1px solid #ff3e00;
+	text-align: center;
+	padding: 10px;
+	max-width: 448px;
+	margin: 10px;
+    border: 1px solid #ff3e00;
     }
 
 	@media (min-width: 640px) {

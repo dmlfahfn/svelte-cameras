@@ -4,9 +4,7 @@
     let username = "";
     let password = "";
     let users = [];
-    let user;
-
-    // $: console.log("username", username)
+    let user = null;
 
     onMount(() => {
         fetch("http://localhost:3000/users")
@@ -27,31 +25,27 @@
 <main>
     {#if !user}
     <form on:submit={onSubmit}>
-       
         <input type ="text" id="username" bind:value={username}/>
         <input type ="password" id="password" bind:value={password}/>
         <button>Log In</button>
-
-
-
     </form>
     {/if}
 
     {#if user }
         <Sites {...{user}}/>
-    {:else}
+    {:else if user === undefined}
         <p>Are you sure you have the right username or password?</p>
     {/if}
 
 </main>
+
 <style>
 main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
+	text-align: center;
+	padding: 10px;
+	max-width: 448px;
+	margin: 10px;
+    }
 
 	@media (min-width: 640px) {
 		main {

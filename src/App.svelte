@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<h1>Please log in!</h1>
+	<h1>Welcome to the device portal!</h1>
 	<Form />
 </main>
 
