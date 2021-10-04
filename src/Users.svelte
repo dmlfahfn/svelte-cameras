@@ -1,6 +1,7 @@
 <script>
 import { onMount } from "svelte";
 import User from "./User.svelte";
+import Form from "./Form.svelte";
 
 
     export let users = [];
@@ -12,11 +13,12 @@ import User from "./User.svelte";
             console.log(data)
             users = data
         });
-    })
+    });
 
 </script>
 
 <main>
+    <Form />
     {#each users as user}
         <User {user} />
     {:else}

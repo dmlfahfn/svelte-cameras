@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<h1>Hello all users!</h1>
+	<h1>Please log in!</h1>
 	<Users />
 </main>
 

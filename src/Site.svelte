@@ -6,7 +6,7 @@
     </script>
     
     <main>
-        <li>{site.title}</li>
+        <li>{site.title, site.owner}</li>
     </main>
     
     <style>

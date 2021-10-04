@@ -1,5 +1,6 @@
 <script>
 import Site from "./Sites.svelte";
+import User from "./User.svelte"
     export let sites = [];
 
     onMount(() => {
@@ -14,6 +15,7 @@ import Site from "./Sites.svelte";
 </script>
 
 <main>
+    
     {#each sites as site}
         <Site {site} />
     {:else}
@@ -28,9 +30,6 @@ main {
 		max-width: 448px;
 		margin: 10px;
         border: 1px solid #ff3e00;
-    }
-    li {
-        list-style: none;
     }
 
 	@media (min-width: 640px) {
