@@ -453,7 +453,13 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (20:4) {:else}
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[5] = list[i];
+    	return child_ctx;
+    }
+
+    // (22:4) {:else}
     function create_else_block$1(ctx) {
     	let div;
 
@@ -462,7 +468,7 @@ var app = (function () {
     			div = element("div");
     			div.textContent = "Loading Devices";
     			attr_dev(div, "class", "svelte-1cd63hr");
-    			add_location(div, file$3, 20, 8, 512);
+    			add_location(div, file$3, 22, 8, 694);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -476,7 +482,100 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(20:4) {:else}",
+    		source: "(22:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (19:8) {#each device.storages as storage}
+    function create_each_block_1(ctx) {
+    	let div;
+    	let b0;
+    	let t1_value = /*device*/ ctx[2].title + "";
+    	let t1;
+    	let t2;
+    	let b1;
+    	let t4_value = /*device*/ ctx[2].description + "";
+    	let t4;
+    	let t5;
+    	let b2;
+    	let t7_value = /*device*/ ctx[2].model + "";
+    	let t7;
+    	let t8;
+    	let b3;
+    	let t10_value = /*device*/ ctx[2].connected + "";
+    	let t10;
+    	let t11;
+    	let b4;
+    	let t13_value = /*storage*/ ctx[5].state + "";
+    	let t13;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			b0 = element("b");
+    			b0.textContent = "Device name: ";
+    			t1 = text(t1_value);
+    			t2 = text(", ");
+    			b1 = element("b");
+    			b1.textContent = "Device description: ";
+    			t4 = text(t4_value);
+    			t5 = text(", ");
+    			b2 = element("b");
+    			b2.textContent = "Model: ";
+    			t7 = text(t7_value);
+    			t8 = text(", ");
+    			b3 = element("b");
+    			b3.textContent = "Connected: ";
+    			t10 = text(t10_value);
+    			t11 = text(", ");
+    			b4 = element("b");
+    			b4.textContent = "Storages state: ";
+    			t13 = text(t13_value);
+    			add_location(b0, file$3, 19, 13, 457);
+    			add_location(b1, file$3, 19, 49, 493);
+    			add_location(b2, file$3, 19, 98, 542);
+    			add_location(b3, file$3, 19, 128, 572);
+    			add_location(b4, file$3, 19, 166, 610);
+    			attr_dev(div, "class", "svelte-1cd63hr");
+    			add_location(div, file$3, 19, 8, 452);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, b0);
+    			append_dev(div, t1);
+    			append_dev(div, t2);
+    			append_dev(div, b1);
+    			append_dev(div, t4);
+    			append_dev(div, t5);
+    			append_dev(div, b2);
+    			append_dev(div, t7);
+    			append_dev(div, t8);
+    			append_dev(div, b3);
+    			append_dev(div, t10);
+    			append_dev(div, t11);
+    			append_dev(div, b4);
+    			append_dev(div, t13);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*devices*/ 1 && t1_value !== (t1_value = /*device*/ ctx[2].title + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*devices*/ 1 && t4_value !== (t4_value = /*device*/ ctx[2].description + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*devices*/ 1 && t7_value !== (t7_value = /*device*/ ctx[2].model + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*devices*/ 1 && t10_value !== (t10_value = /*device*/ ctx[2].connected + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*devices*/ 1 && t13_value !== (t13_value = /*storage*/ ctx[5].state + "")) set_data_dev(t13, t13_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(19:8) {#each device.storages as storage}",
     		ctx
     	});
 
@@ -485,37 +584,58 @@ var app = (function () {
 
     // (18:4) {#each devices as device}
     function create_each_block$1(ctx) {
-    	let div;
-    	let t0;
-    	let t1_value = /*device*/ ctx[2].title + "";
-    	let t1;
-    	let t2;
-    	let t3_value = /*device*/ ctx[2].description + "";
-    	let t3;
+    	let each_1_anchor;
+    	let each_value_1 = /*device*/ ctx[2].storages;
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			t0 = text("Device name:  ");
-    			t1 = text(t1_value);
-    			t2 = text(", Device description: ");
-    			t3 = text(t3_value);
-    			attr_dev(div, "class", "svelte-1cd63hr");
-    			add_location(div, file$3, 18, 8, 409);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, t0);
-    			append_dev(div, t1);
-    			append_dev(div, t2);
-    			append_dev(div, t3);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*devices*/ 1 && t1_value !== (t1_value = /*device*/ ctx[2].title + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*devices*/ 1 && t3_value !== (t3_value = /*device*/ ctx[2].description + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*devices*/ 1) {
+    				each_value_1 = /*device*/ ctx[2].storages;
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
     		}
     	};
 

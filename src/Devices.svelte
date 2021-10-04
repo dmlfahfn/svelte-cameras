@@ -16,7 +16,9 @@
 
 <main>
     {#each devices as device}
-        <div> Device name:  {device.title}, Device description: {device.description}</div>
+        {#each device.storages as storage}
+        <div><b>Device name: </b>{device.title}, <b>Device description: </b>{device.description}, <b>Model: </b>{device.model}, <b>Connected: </b>{device.connected}, <b>Storages state: </b>{storage.state}</div>
+        {/each}   
     {:else}
         <div>Loading Devices</div>
     {/each}
