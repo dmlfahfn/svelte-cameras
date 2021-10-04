@@ -16,12 +16,28 @@
 
 <main>
     {#each devices as device}
-        <div>{device.title}</div>
+        <div> Device name:  {device.title}, Device description: {device.description}</div>
     {:else}
         <div>Loading Devices</div>
     {/each}
 </main>
 
 <style>
+main {
+	text-align: center;
+	padding: 10px;
+	max-width: 448px;
+	margin: 10px;
+    }
+main div{
+    border:1px solid #ff3e00;
+    padding: 10px;
+    margin: 10px;
+    }
 
+	@media (min-width: 640px) {
+		main {
+			max-width: none;
+		}
+	}
 </style>

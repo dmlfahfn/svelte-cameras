@@ -461,7 +461,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Loading Devices";
-    			add_location(div, file$3, 20, 8, 455);
+    			attr_dev(div, "class", "svelte-1cd63hr");
+    			add_location(div, file$3, 20, 8, 512);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -485,21 +486,33 @@ var app = (function () {
     // (18:4) {#each devices as device}
     function create_each_block$1(ctx) {
     	let div;
-    	let t_value = /*device*/ ctx[2].title + "";
-    	let t;
+    	let t0;
+    	let t1_value = /*device*/ ctx[2].title + "";
+    	let t1;
+    	let t2;
+    	let t3_value = /*device*/ ctx[2].description + "";
+    	let t3;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			t = text(t_value);
+    			t0 = text("Device name:  ");
+    			t1 = text(t1_value);
+    			t2 = text(", Device description: ");
+    			t3 = text(t3_value);
+    			attr_dev(div, "class", "svelte-1cd63hr");
     			add_location(div, file$3, 18, 8, 409);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, t);
+    			append_dev(div, t0);
+    			append_dev(div, t1);
+    			append_dev(div, t2);
+    			append_dev(div, t3);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*devices*/ 1 && t_value !== (t_value = /*device*/ ctx[2].title + "")) set_data_dev(t, t_value);
+    			if (dirty & /*devices*/ 1 && t1_value !== (t1_value = /*device*/ ctx[2].title + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*devices*/ 1 && t3_value !== (t3_value = /*device*/ ctx[2].description + "")) set_data_dev(t3, t3_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -545,6 +558,7 @@ var app = (function () {
     				each_1_else.c();
     			}
 
+    			attr_dev(main, "class", "svelte-1cd63hr");
     			add_location(main, file$3, 16, 0, 364);
     		},
     		l: function claim(nodes) {
@@ -796,6 +810,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Loading Sites";
+    			attr_dev(div, "class", "svelte-1ylsl0t");
     			add_location(div, file$2, 28, 12, 653);
     		},
     		m: function mount(target, anchor) {
@@ -833,6 +848,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
+    			attr_dev(div, "class", "svelte-1ylsl0t");
     			add_location(div, file$2, 26, 12, 569);
     		},
     		m: function mount(target, anchor) {
@@ -977,7 +993,7 @@ var app = (function () {
     			if (if_block0) if_block0.c();
     			t = space();
     			if (if_block1) if_block1.c();
-    			attr_dev(main, "class", "svelte-ksesm4");
+    			attr_dev(main, "class", "svelte-1ylsl0t");
     			add_location(main, file$2, 23, 0, 503);
     		},
     		l: function claim(nodes) {

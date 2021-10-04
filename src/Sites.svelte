@@ -43,7 +43,12 @@ main {
 	padding: 10px;
 	max-width: 448px;
 	margin: 10px;
-    border: 1px solid #ff3e00;
+    }
+    
+main div{
+    border:1px solid #ff3e00;
+    padding: 10px;
+    margin: 10px;
     }
 
 	@media (min-width: 640px) {
