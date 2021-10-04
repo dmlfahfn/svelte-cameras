@@ -1,10 +1,10 @@
 <script>
-	import Users from "./Users.svelte";
+	import Form from "./Form.svelte";
 </script>
 
 <main>
 	<h1>Please log in!</h1>
-	<Users />
+	<Form />
 </main>
 
 <style>

@@ -1,14 +1,16 @@
 <script>
-import Site from "./Sites.svelte";
-import User from "./User.svelte"
-    export let sites = [];
+import {onMount} from "svelte";
+export let user;
+let sites = [];
+
 
     onMount(() => {
+        console.log(user.username);
         fetch("http://localhost:3000/sites")
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            sites = data
+            sites = data.filter(s => s.owner == user.username)
         });
     })
 
@@ -17,7 +19,7 @@ import User from "./User.svelte"
 <main>
     
     {#each sites as site}
-        <Site {site} />
+        <div>{site.title}</div>
     {:else}
         <div>Hämtar Sites</div>
     {/each}
