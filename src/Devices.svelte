@@ -1,20 +1,25 @@
 <script>
-import {onMount} from "svelte";
+    import {onMount} from "svelte";
+    export let site;
+    let devices = [];
 
-onMount(() => {
-        console.log(user.username);
-        fetch("http://localhost:3000/sites")
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            sites = data.filter(s => s.owner == user.username)
+    onMount(() => {
+            fetch("http://localhost:3000/devices")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                devices = data.filter(d => d.site_id == site.id)
+            });
         });
-    });
 
 </script>
 
 <main>
-
+    {#each devices as device}
+        <div>{device.title}</div>
+    {:else}
+        <div>Loading Devices</div>
+    {/each}
 </main>
 
 <style>

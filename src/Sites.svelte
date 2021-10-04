@@ -1,10 +1,11 @@
 <script>
     import {onMount} from "svelte";
+    import Devices from "./Devices.svelte";
     export let user;
     let sites = [];
+    let site = null;
 
     onMount(() => {
-        console.log(user.username);
         fetch("http://localhost:3000/sites")
         .then(res => res.json())
         .then(data => {
@@ -13,15 +14,27 @@
         });
     });
 
+    const onClick = (e) => {
+        e.preventDefault();
+        site = sites.filter(s => s.id)
+    };
+
 </script>
 
 <main>
-    
-    {#each sites as site}
-        <div>{site.title}</div>
-    {:else}
-        <div>Hämtar Sites</div>
-    {/each}
+    {#if !site}
+        {#each sites as _site}
+            <div on:click={() => site = _site}>{_site.title }</div>
+        {:else}
+            <div>Loading Sites</div>
+        {/each}
+    {/if}
+
+    {#if site }
+        <Devices {...{site}}/>
+    {:else if site === undefined}
+        <p>Please click on the sites to view the devices!</p>
+    {/if}
 </main>
 
 <style>
